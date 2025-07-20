@@ -72,7 +72,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>No</th>
-                    <th>Tanggal Update</th>
+                    <th>Tanggal Pengeluaran</th>
                     <th>NamaPengeluaran</th>
                     <th>Jumlah Dana</th>
                     <th>Keterangan</th>

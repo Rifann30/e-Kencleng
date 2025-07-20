@@ -178,7 +178,7 @@
                                     <div class=" mb-1 card-wid">
                                         <div class="card card-glass h-100">
                                             <div class="card-body">
-                                                <h6 class="mb-1">Jamaah</h6>
+                                                <h6 class="mb-1">Jumlah Jamaah</h6>
                                                 <h3 class="m-0">{{ $totalJamaah }}</h3>
                                             </div>
                                         </div>
@@ -200,7 +200,7 @@
 									<thead class="table-header-sticky">
 										<tr>
                                             <th class="text-start">No</th>
-                                            <th class="text-start">Tanggal Update</th>
+
                                             <th class="text-start">Periode Pengambilan</th>
                                             <th class="text-start">Jumlah kencleng Diambil</th>
                                             <th class="text-start">Dana Perolehan</th>
@@ -210,7 +210,7 @@
                                         @foreach($pengambilanTerbaru as $index => $item)
                                             <tr>
                                                 <td class="text-start">{{ $index + 1 }}</td>
-                                                <td class="text-start">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</td>
+
                                                 <td class="text-start">{{ $item->periode }}</td>
                                                 <td class="text-start">{{ $item->jml_jamaah }}</td>
                                                 <td class="text-start">{{ formatRupiah($item->jml_dana, true) }}</td>
@@ -240,7 +240,7 @@
                                             <thead class="table-header-sticky">
                                                 <tr>
                                                     <th class="text-start ">No</th>
-                                                    <th class="text-start th-kecil">Tanggal Update</th>
+                                                    <th class="text-start th-kecil">Tanggal Pengeluaran</th>
                                                     <th class="text-start">Nama Pengeluaran</th>
                                                     <th class="text-start">Jumlah Dana</th>
                                                     <th class="text-start">Keterangan</th>

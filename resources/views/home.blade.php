@@ -165,7 +165,7 @@
         <div class="mb-1 card-wid">
             <div class="card">
                 <div class="card-body">
-                    <h6 class="card-title">Jamaah</h6>
+                    <h6 class="card-title">Jumlah Jamaah</h6>
                     <h3 class="m-0" style="color: #23D155">{{ $totalJamaah }}</h3>
 
                 </div>
@@ -188,7 +188,7 @@
                             <thead class="table-header-sticky">
                                 <tr >
                                     <th>No</th>
-                                    <th class="">Tanggal Update</th>
+
                                     <th class="">Periode Pengambilan</th>
                                     <th>Jumlah Kencleng Diambil</th>
                                     <th>Dana Perolehan</th>
@@ -198,7 +198,7 @@
                                 @forelse($pengambilanTerbaru as $index => $item)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td class="">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</td>
+
                                     <td class="">{{ $item->periode }}</td>
                                     <td>{{ $item->jml_jamaah }}</td>
                                     <td style="color: #23D155">{{ formatRupiah($item->jml_dana, true) }}</td>
@@ -230,7 +230,7 @@
                         <thead class="table-header-sticky">
                             <tr>
                                 <th>No</th>
-                                <th class="">Tanggal Update</th>
+                                <th class="">Tanggal Pengeluaran</th>
                                 <th>Nama Pengeluaran</th>
                                 <th>Jumlah Dana</th>
                                 <th class="">Keterangan</th>

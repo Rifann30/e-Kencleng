@@ -77,11 +77,15 @@
 	}
 
 	a {
-		color: #23D155;
+		color: #2e8cff;
 		text-decoration: underline;
+        font-size: clamp(0.6rem, 1.6vw, 1rem);
+
 	}
 
 	.btn-hijau {
+        font-size: clamp(0.6rem, 1.6vw, 1rem);
+        border-radius: clamp(5px, 1.2vw, 6px);
 		background-color: #1A973D;
 		border-color: #1A973D;
 		color: white;
@@ -97,20 +101,29 @@
 	.invalid-feedback {
 		color: #ff6b6b;
 	}
+    .desc-welcome {
+        color: #ffffffbf;
+        font-size: clamp(0.8rem, 1vw + 0.5rem, 1.2rem);
+        line-height: 1.3;
+    }
 </style>
 
 </head>
 
 <body>
 	<main class="d-flex w-100">
+
+{{-- @extends('layouts.app_welcome')
+
+@section('content') --}}
 		<div class="container d-flex flex-column">
 			<div class="row vh-100">
 				<div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
 					<div class="d-table-cell align-middle">
 
 						<div class="text-center mt-4">
-							<h1 class="h2"><strong>Selamat Datang Kembali!</strong></h1>
-							<p class="lead">Masuk ke akun Anda untuk melanjutkan</p>
+							<h3 style="font-size: clamp(1rem, 1.2vw + 1rem, 2.5rem);"><strong>Selamat Datang Kembali!</strong></h3>
+							<p class="desc-welcome">Masuk ke akun Anda untuk melanjutkan</p>
 						</div>
 
 						<div class="card">
@@ -121,11 +134,12 @@
                                                                 {{session('status')}}
                                                             </div>
                                                         @endif
+
 									<form method="POST" action="{{ route('login') }}">
 										@csrf
 
 										<div class="mb-3">
-											<label class="form-label">Email</label>
+											<label class="form-label" style="font-size: clamp(0.6rem, 1vw, 1rem); font-weight: 600;">Email</label>
 											<input class="form-control form-control-lg @error('email') is-invalid @enderror"
 												type="email" name="email" placeholder="Masukkan email"
 												value="{{ old('email') }}" required autocomplete="email" autofocus />
@@ -135,7 +149,7 @@
 										</div>
 
 										<div class="mb-3">
-											<label class="form-label">Password</label>
+											<label class="form-label" style="font-size: clamp(0.6rem, 1vw, 1rem); font-weight: 600;">Password</label>
 											<input class="form-control form-control-lg @error('password') is-invalid @enderror"
 												type="password" name="password" placeholder="Masukkan password"
 												required autocomplete="current-password" />
@@ -157,12 +171,14 @@
 							</div>
 						</div>
 
-						<p class="text-center text-white mt-4">&copy; <span id="year"></span> Takmir Masjid Akbar</p>
+						<p class="text-center text-white mt-4" style="font-size: clamp(0.6rem, 1.6vw, 1rem);">&copy; <span id="year"></span> Takmir Masjid Akbar</p>
 
 					</div>
 				</div>
 			</div>
 		</div>
+
+{{-- @endsection --}}
 	</main>
 
 	<script>

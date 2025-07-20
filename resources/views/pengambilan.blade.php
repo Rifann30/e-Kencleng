@@ -76,7 +76,7 @@
         <div class="row d-flex mt-4">
             <div class="col-md-6">
                 <label for="jml_dana" class="form-label label-responsive">Jumlah Dana diperoleh</label>
-                <input type="text" name="jml_dana" id="jml_dana" class="rupiah form-control select2-hijau " placeholder="Masukkan jumlah dana" required>
+                <input type="text" name="jml_dana" id="jml_dana" class="rupiah form-control select2-hijau " placeholder="Masukkan jumlah dana" required >
             </div>
             <div class="col-md-6">
                 <label for="jml_jamaah" class="form-label label-responsive">Jumlah Pengambilan Kencleng</label>
@@ -152,7 +152,7 @@
         <thead class="table-header-sticky">
             <tr>
                 <th>No</th>
-                <th>Tanggal Update</th>
+
                 <th>Periode Pengambilan</th>
                 <th>Jumlah Kencleng Diambil</th>
                 <th>Dana Perolehan</th>
@@ -163,7 +163,6 @@
             @foreach($pengambilans as $index => $item)
                 <tr>
                     <td>{{ $pengambilans->firstItem() + $index }}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d-m-Y') }}</td>
                     <td>{{ $item->periode }}</td>
                     <td>{{ $item->jml_jamaah }}</td>
                     <td style="color: #23D155;">{{ formatRupiah($item->jml_dana, true) }}</td>
