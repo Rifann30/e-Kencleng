@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Jul 2025 pada 05.51
+-- Waktu pembuatan: 20 Jul 2025 pada 06.35
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -310,9 +310,9 @@ INSERT INTO `pengambilans` (`id`, `jml_dana`, `jml_jamaah`, `jml_pengambilan`, `
 (29, 2900000, 0, 17100000, '2025-06-30', 'April 2024', '2025-06-30 09:05:25', '2025-06-30 09:05:25', 1, 1),
 (30, 5600000, 3, 41500000, '2025-07-08', 'Oktober 2024', '2025-06-30 09:05:44', '2025-07-08 00:17:55', 1, 5),
 (31, 2800000, 2, 25500000, '2025-06-30', 'April 2025', '2025-06-30 09:06:14', '2025-06-30 09:06:14', 1, 1),
-(32, 5000000, 5, 37500000, '2025-07-01', 'Mei 2025', '2025-06-30 09:06:32', '2025-07-01 11:15:52', 1, 1),
+(32, 5100000, 5, 48508000, '2025-07-20', 'Mei 2025', '2025-06-30 09:06:32', '2025-07-20 04:01:10', 1, 1),
 (33, 4300000, 2, 34800000, '2025-06-30', 'Juni 2025', '2025-06-30 09:06:49', '2025-06-30 09:06:49', 1, 1),
-(34, 2700000, 2, 37500000, '2025-06-30', 'Juli 2025', '2025-06-30 12:28:36', '2025-06-30 12:28:36', 1, 1),
+(34, 2600000, 2, 48408000, '2025-07-20', 'Juli 2025', '2025-06-30 12:28:36', '2025-07-20 04:00:42', 1, 1),
 (35, 4000000, 4, 48508000, '2025-07-14', 'Agustus 2025', '2025-07-08 00:17:10', '2025-07-14 13:07:06', 5, 1),
 (36, 7000000, 6, 48500000, '2025-07-14', 'Januari 2025', '2025-07-14 12:46:49', '2025-07-14 12:46:49', 1, 1),
 (37, 8000, 6, 48508000, '2025-07-14', 'Februari 2025', '2025-07-14 12:47:11', '2025-07-14 12:47:11', 1, 1);
@@ -388,11 +388,11 @@ INSERT INTO `pengeluarans` (`id`, `pengeluaran`, `keterangan`, `jml_pengeluaran`
 (16, 'Perbaikan Pintu', 'Pintu utama rusak', 0, 550000, '2024-04-03', '2025-06-25 04:41:36', '2025-06-25 04:41:36', NULL, NULL),
 (17, 'Cetak Buku Kegiatan', 'Dokumentasi dan laporan tahunan', 0, 320000, '2024-04-08', '2025-06-25 04:41:36', '2025-06-25 04:41:36', NULL, NULL),
 (18, 'Sedekah Korban Bencana', 'Donasi warga terdampak banjir', 0, 1000000, '2024-04-12', '2025-06-25 04:41:36', '2025-06-25 04:41:36', NULL, NULL),
-(20, 'Honor Imam Tarawih', 'Untuk imam selama bulan Ramadhan', 8000000, 8000000, '2024-04-25', '2025-06-25 04:41:36', '2025-06-25 01:18:19', NULL, NULL),
+(20, 'Honor Imam Tarawih', 'Untuk imam selama bulan Ramadhan', 8100000, 8100000, '2024-04-25', '2025-06-25 04:41:36', '2025-07-20 04:02:18', NULL, 1),
 (22, 'mic', 'dd', 3000000, 3000000, '2025-06-02', '2025-06-25 23:18:43', '2025-06-25 23:18:43', NULL, NULL),
 (23, 'Semen', 'dfdf', 4000000, 4000000, '2024-03-01', '2025-06-25 23:21:13', '2025-06-25 23:21:13', 1, 1),
 (24, 'tenda', 'dfdf', 8000000, 8000000, '2025-06-28', '2025-06-30 02:18:25', '2025-06-30 02:18:25', NULL, NULL),
-(25, 'Jajan', 'ksks', 2000000, 2000000, '2025-07-10', '2025-07-08 00:05:56', '2025-07-08 00:06:11', 6, 6);
+(25, 'Jajan Takmir', 'ksks', 2000000, 2000000, '2025-07-10', '2025-07-08 00:05:56', '2025-07-20 04:01:57', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -432,7 +432,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$ZOiqQKFQiH0vddE77gSige4T6hSHWBzovQw3xRK/f0xYL/K2Hv/aS', 'sP0vFlowyMcdhRPjwxcWCy3kRR3sGCC1NXt3G6TBF6VDDRCD0vMw4sB87cUL', '2025-06-24 05:45:56', '2025-07-19 10:36:01'),
+(1, 'admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$/tJXEdM6RRUmOaYRVEk.GOJyGp9qusPpyg8rCixVBcxLS2D1r7T8K', '1L2OPZV7nG2E9iV6amooEndxP3TbbjbH9DnqZdUX8Fpsd4iwxHjXeOuwCORu', '2025-06-24 05:45:56', '2025-07-20 04:35:03'),
 (5, 'remas', 'remas@gmail.com', 'remas', NULL, '$2y$12$PK2Flh7DH29bmglCa2nBhe5hBPCQ0uFp2Z.EUe3F64fgRtcn.HAqO', 'ewRL9bY65Efub3KV14G1agcOl9zScWec9WRrJ5LqzyXnUbICe9jNvjCyTtrc', '2025-06-30 02:15:09', '2025-07-08 10:18:40'),
 (6, 'takmir', 'takmir@gmail.com', 'takmir', NULL, '$2y$12$.3yltj.BPF4uAhCWSXqKOuYV90frJrR8/xqMv15kPhXJJeHIS0iK2', NULL, '2025-06-30 02:34:46', '2025-06-30 02:34:46');
 
