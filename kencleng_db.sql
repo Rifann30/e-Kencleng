@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2025 pada 02.54
+-- Waktu pembuatan: 20 Jul 2025 pada 05.51
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -135,7 +135,10 @@ INSERT INTO `jamaahs` (`id`, `nama`, `alamat`, `kelompok`, `jml_jamaah`, `tangga
 (70, 'Minarsih', 'RT 1/RW 3', 'Kelompok 3', 0, '0000-00-00', '2025-06-25 04:41:13', '2025-06-25 04:41:13'),
 (71, 'Slamet', 'RT 1/RW 3', 'Kelompok 4', 0, '0000-00-00', '2025-06-25 04:41:13', '2025-06-25 04:41:13'),
 (72, 'suro', 'RT 2/RW 3', 'Kelompok 4', 5, '2025-06-25', '2025-06-24 22:34:35', '2025-06-24 22:34:35'),
-(73, 'ahmad', 'RT 2/RW 3', 'Kelompok 3', 6, '2025-06-25', '2025-06-24 22:34:52', '2025-06-24 22:43:10');
+(73, 'ahmad', 'RT 2/RW 3', 'Kelompok 3', 6, '2025-06-25', '2025-06-24 22:34:52', '2025-06-24 22:43:10'),
+(75, 'Adi Surya', 'RT 1/RW 3', 'Kelompok 1', 1, '2025-07-20', '2025-07-14 12:44:34', '2025-07-20 03:00:09'),
+(76, 'Arul Budianti Karjono', 'RT 2/RW 3', 'Kelompok 3', 2, '2025-07-14', '2025-07-14 12:44:58', '2025-07-14 12:45:22'),
+(77, 'Aryaning', 'RT 1/RW 3', 'Kelompok 3', 3, '2025-07-20', '2025-07-20 02:59:26', '2025-07-20 02:59:26');
 
 -- --------------------------------------------------------
 
@@ -187,7 +190,20 @@ INSERT INTO `jamaah_pengambilan` (`id`, `pengambilan_id`, `jamaah_id`, `created_
 (175, 35, 72, NULL, NULL),
 (176, 30, 25, NULL, NULL),
 (177, 30, 28, NULL, NULL),
-(178, 30, 58, NULL, NULL);
+(178, 30, 58, NULL, NULL),
+(179, 36, 3, NULL, NULL),
+(180, 36, 9, NULL, NULL),
+(181, 36, 66, NULL, NULL),
+(182, 36, 69, NULL, NULL),
+(183, 36, 70, NULL, NULL),
+(184, 36, 73, NULL, NULL),
+(185, 37, 3, NULL, NULL),
+(186, 37, 9, NULL, NULL),
+(187, 37, 66, NULL, NULL),
+(188, 37, 69, NULL, NULL),
+(189, 37, 70, NULL, NULL),
+(190, 37, 73, NULL, NULL),
+(191, 35, 56, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -264,13 +280,6 @@ CREATE TABLE `password_reset_tokens` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data untuk tabel `password_reset_tokens`
---
-
-INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
-('admin@gmail.com', '$2y$12$l/Oi6fgYVD2T7kHIGwFCJuvEnu.ZV0ohByLgZgJcsK10VS8eNn4fK', '2025-07-07 15:31:31');
-
 -- --------------------------------------------------------
 
 --
@@ -304,7 +313,9 @@ INSERT INTO `pengambilans` (`id`, `jml_dana`, `jml_jamaah`, `jml_pengambilan`, `
 (32, 5000000, 5, 37500000, '2025-07-01', 'Mei 2025', '2025-06-30 09:06:32', '2025-07-01 11:15:52', 1, 1),
 (33, 4300000, 2, 34800000, '2025-06-30', 'Juni 2025', '2025-06-30 09:06:49', '2025-06-30 09:06:49', 1, 1),
 (34, 2700000, 2, 37500000, '2025-06-30', 'Juli 2025', '2025-06-30 12:28:36', '2025-06-30 12:28:36', 1, 1),
-(35, 4000000, 3, 41500000, '2025-07-08', 'Agustus 2025', '2025-07-08 00:17:10', '2025-07-08 00:17:10', 5, 5);
+(35, 4000000, 4, 48508000, '2025-07-14', 'Agustus 2025', '2025-07-08 00:17:10', '2025-07-14 13:07:06', 5, 1),
+(36, 7000000, 6, 48500000, '2025-07-14', 'Januari 2025', '2025-07-14 12:46:49', '2025-07-14 12:46:49', 1, 1),
+(37, 8000, 6, 48508000, '2025-07-14', 'Februari 2025', '2025-07-14 12:47:11', '2025-07-14 12:47:11', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -421,8 +432,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$WaaFLvn8vcgi5RCoE1KsK.PiCLpQEEe54RuxYUUroLBwtb8CyLCEu', 'vlNIjVmI2KicUlLa2oadYmxDOV97pYfTRE9ek1TZBd2M1mlFD79zIqyJec5K', '2025-06-24 05:45:56', '2025-07-07 08:08:40'),
-(5, 'remas', 'remas@gmail.com', 'remas', NULL, '$2y$12$c6DwdSqAlUS232cPH.W0o.bC3DoZfRvkPmf6Alt6X2EVSN2vtoeOi', 'EYxSFcVcF6VefrOiiPTN1tCJHttS4CCCz2oV7qLnO4BRuxItcBGTBjqUKOy1', '2025-06-30 02:15:09', '2025-07-07 15:32:53'),
+(1, 'admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$ZOiqQKFQiH0vddE77gSige4T6hSHWBzovQw3xRK/f0xYL/K2Hv/aS', 'sP0vFlowyMcdhRPjwxcWCy3kRR3sGCC1NXt3G6TBF6VDDRCD0vMw4sB87cUL', '2025-06-24 05:45:56', '2025-07-19 10:36:01'),
+(5, 'remas', 'remas@gmail.com', 'remas', NULL, '$2y$12$PK2Flh7DH29bmglCa2nBhe5hBPCQ0uFp2Z.EUe3F64fgRtcn.HAqO', 'ewRL9bY65Efub3KV14G1agcOl9zScWec9WRrJ5LqzyXnUbICe9jNvjCyTtrc', '2025-06-30 02:15:09', '2025-07-08 10:18:40'),
 (6, 'takmir', 'takmir@gmail.com', 'takmir', NULL, '$2y$12$.3yltj.BPF4uAhCWSXqKOuYV90frJrR8/xqMv15kPhXJJeHIS0iK2', NULL, '2025-06-30 02:34:46', '2025-06-30 02:34:46');
 
 --
@@ -541,13 +552,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `jamaahs`
 --
 ALTER TABLE `jamaahs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT untuk tabel `jamaah_pengambilan`
 --
 ALTER TABLE `jamaah_pengambilan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
 
 --
 -- AUTO_INCREMENT untuk tabel `jobs`
@@ -565,7 +576,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `pengambilans`
 --
 ALTER TABLE `pengambilans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengambilan_temps`
