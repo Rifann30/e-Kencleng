@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">Pengambilan <strong>Kencleng</strong></h1>
+    <h2 class="mb-3 mt-2">Pengambilan <strong>Kencleng</strong></h2>
     {{-- Filter Kelompok Jamaah --}}
-    <div class="col-4 form-group mb-3">
-        <label for="filterKelompok" class="form-label">Filter Kelompok Jamaah</label>
-        <select id="filterKelompok" class="form-select">
+    <div class=" form-group mb-3">
+        <label for="filterKelompok" class="form-label" style="font-size: clamp(0.6rem, 0.8vw, 1rem);">Filter Kelompok Jamaah</label>
+        <select id="filterKelompok" class="form-select select2-hijau" style="width: 50%">
             <option value="">Semua Kelompok</option>
             @foreach($kelompoks->sortKeys() as $kelompok => $jamaahs)
                 <option value="{{ $kelompok }}">{{ $kelompok }}</option>
@@ -72,25 +72,23 @@
         </div>
 
 
-
-
         {{-- Input Pengambilan --}}
-        <div class="row mb-3 mt-4">
+        <div class="row d-flex mt-4">
             <div class="col-md-6">
-                <label for="jml_dana" class="form-label">Jumlah Dana diperoleh</label>
-                <input type="text" name="jml_dana" id="jml_dana" class="form-control rupiah" placeholder="Masukkan jumlah dana" required>
+                <label for="jml_dana" class="form-label label-responsive">Jumlah Dana diperoleh</label>
+                <input type="text" name="jml_dana" id="jml_dana" class="rupiah form-control select2-hijau " placeholder="Masukkan jumlah dana" required>
             </div>
             <div class="col-md-6">
-                <label for="jml_jamaah" class="form-label">Jumlah Pengambilan Kencleng</label>
-                <p id="total-jamaah" class="text-success fs-5 mt-2" style="color: #23D155">0 Jamaah</p>
+                <label for="jml_jamaah" class="form-label label-responsive">Jumlah Pengambilan Kencleng</label>
+                <p id="total-jamaah" class="text-success mt-2" style="color: #23D155; font-size: clamp(0.8rem, 1.3vw, 2.5rem);">0 Jamaah</p>
                 <input type="hidden" name="jml_jamaah" id="jml_jamaah" value="0">
             </div>
         </div>
 
-        <div class="row mb-4">
+        <div class="row mb-3">
             <div class="col-md-6">
-                <label for="bulan" class="form-label">Bulan Pengambilan</label>
-                <select name="bulan" id="bulan" class="form-select" required>
+                <label for="bulan" class="form-label label-responsive">Bulan Pengambilan</label>
+                <select name="bulan" id="bulan" class="form-select select2-hijau" required>
                     <option value="">-- Pilih Bulan --</option>
                     @foreach($dataBulan as $angka => $nama)
                         <option value="{{ $nama }}">{{ $nama }}</option>
@@ -98,8 +96,8 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="tahun" class="form-label">Tahun Pengambilan</label>
-                <select name="tahun" id="tahun" class="form-select" required>
+                <label for="tahun" class="form-label label-responsive">Tahun Pengambilan</label>
+                <select name="tahun" id="tahun" class="form-select select2-hijau" required>
                     <option value="">-- Pilih Tahun --</option>
                     @for ($tahun = now()->year; $tahun >= 2023; $tahun--)
                         <option value="{{ $tahun }}">{{ $tahun }}</option>
@@ -109,7 +107,7 @@
             <input type="hidden" name="periode" id="periode">
         </div>
 
-        <div class="col-4 mx-auto mb-5">
+        <div class="col-4 mx-auto mb-3">
             <button type="submit" class="btn btn-hijau w-100">Simpan</button>
         </div>
 
@@ -117,22 +115,18 @@
 
     {{-- Data Pengambilan --}}
 
-
-
-        <div id="tabel-pengambilan" class="d-flex justify-content-between align-items-end flex-wrap mb-3">
+        <div id="tabel-pengambilan" class="d-flex justify-content-between align-items-end flex-wrap" style="margin-top: clamp(2.5rem, 5vw, 6rem);">
             <div class="">
-                <h3 class="mt-5">Data <strong>Pengambilan</strong></h3>
-                <label class="form-label mb-0 fw-bold mt-2">Total Dana Pengambilan:</label>
-                <p class=" mb-0" style="color: #23D155; font-size: 1.5rem; font-weight: 600;">Rp {{ number_format($jumlahPengambilan, 0, ',', '.') }}</p>
+                <h3 class="" style="font-size: clamp(1rem, 2vw, 1.5rem)">Data <strong>Pengambilan</strong></h3>
+                <label class="form-label mb-0 fw-bold" style="font-size: clamp(0.6rem, 0.8vw, 1rem); margin-top: clamp(0.1rem, 0.3vw, 4rem);">Total Dana Pengambilan:</label>
+                <p class=" mb-0" style="color: #23D155; font-size: clamp(1.2rem, 1.7vw, 1.8rem); font-weight: 600;">Rp {{ number_format($jumlahPengambilan, 0, ',', '.') }}</p>
             </div>
 
         <div class="text-end">
-
                 @if(session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
-
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         const el = document.getElementById('tabel-pengambilan');
@@ -153,9 +147,9 @@
 
 
 
-
-    <table class="table table-hijau table-hover table-bordered mt-3">
-        <thead class="table-success">
+<div class="card-aksi table-responsive mt-2" style="max-height: 1000px; overflow-y: auto;">
+    <table class="table table-hijau table-hover my-0">
+        <thead class="table-header-sticky">
             <tr>
                 <th>No</th>
                 <th>Tanggal Update</th>
@@ -169,15 +163,15 @@
             @foreach($pengambilans as $index => $item)
                 <tr>
                     <td>{{ $pengambilans->firstItem() + $index }}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d-m-Y') }}</td>
                     <td>{{ $item->periode }}</td>
                     <td>{{ $item->jml_jamaah }}</td>
-                    <td  style="color: #23D155;">{{ formatRupiah($item->jml_dana, true) }}</td>
+                    <td style="color: #23D155;">{{ formatRupiah($item->jml_dana, true) }}</td>
                     <td>
-                        <a href="{{ route('pengambilan.edit', $item->id) }}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('pengambilan.edit', $item->id) }}" class="btn btn-sm btn-warning mb-1">
                             <i class="fas fa-edit"> Edit</i>
                         </a>
-                        <a href="{{ route('pengambilan.show', $item->id) }}" class="btn btn-sm btn-info">
+                        <a href="{{ route('pengambilan.show', $item->id) }}" class="btn btn-sm btn-info mb-1">
                             <i class="fas fa-info-circle"> Info</i>
                         </a>
                         <form action="{{ route('pengambilan.destroy', $item->id) }}" method="POST" style="display:inline-block">
@@ -192,6 +186,7 @@
             @endforeach
         </tbody>
     </table>
+</div>
     <div class="mt-3">
     {{ $pengambilans->links() }}
     </div>
@@ -199,7 +194,6 @@
 
 {{-- Script Section --}}
 <script>
-
 
     document.addEventListener('DOMContentLoaded', function () {
         // Simpan checkbox ketika berubah
@@ -279,7 +273,6 @@
     document.querySelectorAll('.checkbox-jamaah').forEach(cb => {
         cb.addEventListener('change', hitungJamaah);
     });
-
 
 
     filterKelompok();

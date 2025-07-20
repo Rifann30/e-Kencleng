@@ -19,70 +19,204 @@
 
 	<title> {{$title ?? '' }} :: Kencleng MasjidAkbar</title>
 
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{asset('adminkit/static/css/app.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
 .btn-hijau {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #1A973D;               /* Warna utama */
-  --bs-btn-border-color: #23D155;
-
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #105C26;         /* Hover lebih gelap */
-  --bs-btn-hover-border-color: #0B3F1A;
-
-  --bs-btn-focus-shadow-rgb: 26,151,61; /* RGB dari #1A973D */
-
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0B3F1A;        /* Warna paling gelap saat ditekan */
-  --bs-btn-active-border-color: #0B3F1A;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
-
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #23D155;      /* Hijau terang saat disable */
-  --bs-btn-disabled-border-color: #23D155;
-
-  color: var(--bs-btn-color);
-  background-color: var(--bs-btn-bg);
-  border-color: var(--bs-btn-border-color);
+  font-size: clamp(0.6rem, 1.6vw, 1rem);
+  /* padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(1rem, 2vw, 1.5rem); */
+  color: #fff;
+  background-color: #23D155;
+  border: 1px solid #1A973D;
+  border-radius: clamp(5px, 1.2vw, 6px);
+  transition: all 0.3s ease;
 }
 
 .btn-hijau:hover {
-  color: var(--bs-btn-hover-color);
-  background-color: var(--bs-btn-hover-bg);
-  border-color: var(--bs-btn-hover-border-color);
+  background-color: #105C26;
+  border-color: #0B3F1A;
+  color: #fff;
 }
 
-.btn-hijau:focus,
-.btn-hijau.focus {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+.btn-hijau:focus {
+  box-shadow: 0 0 0 0.25rem rgba(26,151,61,0.5);
+  outline: none;
 }
 
-.btn-hijau:active,
-.btn-hijau.active,
-.show > .btn-hijau.dropdown-toggle {
-  color: var(--bs-btn-active-color);
-  background-color: var(--bs-btn-active-bg);
-  border-color: var(--bs-btn-active-border-color);
-  box-shadow: var(--bs-btn-active-shadow);
+.btn-hijau:active {
+  background-color: #0B3F1A;
+  border-color: #0B3F1A;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
 }
 
-.btn-hijau:disabled,
-.btn-hijau.disabled {
-  color: var(--bs-btn-disabled-color);
-  background-color: var(--bs-btn-disabled-bg);
-  border-color: var(--bs-btn-disabled-border-color);
+.btn-hijau:disabled {
+  background-color: #1A973D;
+  border-color: #1A973D;
+  color: #fff;
+  opacity: 0.7;
 }
+
+    .card-bto button {
+        font-size: clamp(0.6rem, 1.6vw, 1rem);
+        /* padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.7rem, 3vw, 1.2rem); */
+        border-radius: clamp(5px, 1.2vw, 6px);
+        transition: all 0.3s ease;
+    }
+    .card-bto a {
+        font-size: clamp(0.6rem, 1.6vw, 1rem);
+        /* padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.7rem, 3vw, 1.2rem); */
+        border-radius: clamp(5px, 1.2vw, 6px);
+        transition: all 0.3s ease;
+    }
+
+.card-bto2 a {
+    font-size: clamp(0.6rem, 1.6vw, 1rem);
+    padding: clamp(1.5px, 1vw, 0.3px) clamp(2px, 3vw, 1.2rem);
+    padding-top: clamp(1.5px, 1vw, 0.3px);
+    padding-right: clamp(2px, 3vw, 1.2rem);
+    padding-bottom: clamp(1.5px, 1vw, 0.3px);
+    padding-left: clamp(2px, 3vw, 1.2rem);
+    border-radius: clamp(1px, 0.8vw, 6px);
+    transition: all 0.3s ease;
+}
+.card-aksi button {
+    --bs-btn-padding-y: clamp(1.5px, 1vw, 3.2px);
+    --bs-btn-padding-x: clamp(3px, 2vw, 8px);
+    --bs-btn-font-size: clamp(8px, 2vw, 12px);
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+}
+.card-aksi a {
+    --bs-btn-padding-y: clamp(1.5px, 1vw,3.2px);
+    --bs-btn-padding-x: clamp(3px, 2vw, 8px);
+    --bs-btn-font-size: clamp(8px, 2vw, 12px);
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+}
+
+
+    .label-responsive {
+        font-size: clamp(0.55rem, 1.4vw, 1rem);
+        transition: font-size 0.3s ease;
+    }
 
 .table-hijau thead th {
     color:  #212529;
     background-color: #c7ffd7;
     font-weight: 600;
-
+    font-size: clamp(11px, 2vw, 16px);
+    line-height: 1.2;
 }
+
+.table-hijau tbody td {
+    font-size: clamp(9px, 1.5vw, 16px);
+}
+
+.table-hijau tbody tr:hover {
+    background-color: #c7ffd750;
+}
+
+.table-header-sticky th {
+        position: sticky;
+        top: 0;
+
+        z-index: 10;
+    }
+
+    .h2, h2 {
+        font-size: clamp(1.2rem, 1.5vw + 0.8rem, 1.8rem);
+
+    }
+
+    .form-label {
+        margin-bottom: 0;
+    }
+
+
+
+    .label-responsive {
+        font-size: clamp(0.7rem, 0.9vw, 2rem);
+        transition: font-size 0.3s ease;
+    }
+        .select2-hijau {
+        font-size: clamp(0.6rem, 1.5vw, 1rem);
+        font-weight: 500;
+        /* padding: clamp(0.3rem, 1vw, 0.6rem) clamp(0.5rem, 2vw, 1rem); */
+        /* padding: clamp(0.35rem, 1vw, 0.rem) clamp(0.8rem, 1vw, 1.2rem); */
+        transition: font-size 0.3s ease, padding 0.3s ease;
+        background-position: right clamp(4px, 1vw, 10px) center;
+        clamp(14px, 1vw, 12px) clamp(9px, 1vw, 12px);
+        background-repeat: no-repeat;
+        padding-right: clamp(1.5rem, 3vw, 2.5rem);
+        transition: background-size 0.3s ease, background-position 0.3s ease;
+
+    }
+
+
+    .select2-hijau option {
+        font-size: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+.card-wid {
+    width: clamp(145px, 40vw, 274px);
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.card-wid h6 {
+  font-size: clamp(0.6rem, 1vw, 0.9rem);
+}
+
+.card-wid h3 {
+  font-size: clamp(0.8rem, 1.8vw, 1.6rem);
+  font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 0 .875rem 0 rgba(33, 37, 41, .05);
+    margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    .content {
+        padding: 1rem !important;
+    }
+    .copyright {
+        text-align: center;
+        font-size: 0.57rem;
+    }
+}
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #1e1e2f;
+    z-index: 1051;
+    overflow-y: auto;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .js-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1050;
+  }
+}
+
 
     </style>
 
@@ -186,15 +320,28 @@
         {{-- Header--}}
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light" style="background-color: #1A973D; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);">
-				<a class="sidebar-toggle js-sidebar-toggle text-white">
-                    <i class="hamburger align-self-center"></i>
-                </a>
+
+                    {{-- <a href="#" class="sidebar-toggle js-sidebar-toggle js-open-sidebar d-inline-block d-sm-none">
+                        <i class="hamburger align-self-center"></i>
+                    </a> --}}
+                    <button type="button" class="sidebar-toggle js-open-sidebar d-inline-block d-sm-none" style="background: transparent; border: none;">
+                        <i class="hamburger align-self-center"></i>
+                    </button>
+
+                    <button type="button" class="sidebar-toggle js-sidebar-toggle d-none d-sm-inline-block" style="background: transparent; border: none;">
+                        <i class="hamburger align-self-center"></i>
+                    </button>
+
+
+
+
+
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
-							    <a class="nav-icon d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+							    {{-- <a class="nav-icon d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
                                     <i class="align-middle" data-feather="settings"></i>
-                                </a>
-                                <a class="nav-link d-none d-sm-inline-block fw-bold fs-5"  style="color: #ffffff"  href="#" data-bs-toggle="dropdown">
+                                </a> --}}
+                                <a class="nav-link fw-bold fs-5"  style="color: #ffffff"  href="#" data-bs-toggle="dropdown">
                                     <img src="{{ asset('icon/avatar.jpg') }}" class="avatar img-fluid rounded me-2" alt="{{ auth()->user()->nama }}" style="height: 32px; width: 32px;" />
                                     {{ auth()->user()->nama }}
                                 </a>
@@ -206,7 +353,7 @@
 
 
             {{-- Main --}}
-			<main class="content" >
+			<main class="content" style="background-color: #eaeaea14;" >
 
 				<div class="container-fluid p-0">
                     @include('flash::message')
@@ -218,15 +365,13 @@
                 {{-- Footer --}}
 			<footer class="footer"style="box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);">
 				<div class="container-fluid">
-					<div class="row text-muted">
+					<div class="row text-muted ">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-
 							</p>
 						</div>
-						<div class="col-6 text-end">
+						<div class="copyright">
                             &copy; <span id="year"></span>, Designed by <a href="#" ><strong>Takmir Masjid Akbar</strong></a>
-
 						</div>
 					</div>
 				</div>
@@ -242,14 +387,74 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/jquery.mask.min.js')}}"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('.rupiah').mask("#.##0", {
-                reverse: true
-            });
-        });
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // const toggleBtn = document.querySelector('.js-sidebar-toggle');
+    const openBtn = document.querySelector(".js-open-sidebar");
+    // const closeBtn = document.querySelector(".js-close-sidebar");
+    const sidebar = document.querySelector(".sidebar");
+    // const sidebar = document.querySelector('.js-sidebar');
 
-    </script>
+
+    openBtn.addEventListener('click', () => {
+        sidebar.classList.add('collapsed');
+    });
+
+    const showSidebar = () => {
+        sidebar.classList.add("show");
+
+        if (!document.querySelector(".js-overlay")) {
+            const overlay = document.createElement("div");
+            overlay.classList.add("js-overlay");
+
+            overlay.addEventListener("click", () => {
+                hideSidebar();
+            });
+
+            document.body.appendChild(overlay);
+        }
+    };
+
+    const hideSidebar = () => {
+        sidebar.classList.remove("show");
+        const overlay = document.querySelector(".js-overlay");
+        if (overlay) overlay.remove();
+
+    };
+
+    // Tombol buka sidebar
+    openBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showSidebar();
+    });
+
+    // Tombol tutup sidebar
+    // closeBtn?.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     hideSidebar();
+    // });
+
+    // Mencegah klik dalam sidebar menutup overlay
+    sidebar.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
+});
+
+
+// toggleBtn?.addEventListener("click", (e) => {
+//     e.preventDefault(); // <- ini WAJIB kalau tetap pakai <a>
+//     if (sidebar.classList.contains("show")) {
+//         hideSidebar();
+//     } else {
+//         showSidebar();
+//     }
+// });
+
+
+</script>
+
     @yield('js')
 
 </body>

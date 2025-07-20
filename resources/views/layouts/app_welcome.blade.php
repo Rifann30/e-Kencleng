@@ -13,19 +13,18 @@
 #23D155
 --}}
 
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="shortcut icon" href="icon/takmir.png" />
-  <title>Kencleng Masjid</title>
+  <title>e-Kencleng</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
   <style>
   html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: url('img/masjid.jpg') repeat-y center 80%;
+    /* background: url('img/masjid.jpg') repeat-y center 80%; */
+    background: url('img/masjid.jpg') repeat-y center center;
     background-size: cover;
     color: white;
   }
@@ -62,9 +61,13 @@
     text-align: center;
   }
 
+  .logo-welcome {
+        max-width: 120px;
+    }
+
   .navbar {
     background-color: rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(3 px);
+    backdrop-filter: blur(3px);
     z-index: 3;
   }
 
@@ -75,21 +78,36 @@
     color: white;
   }
 
-  .btn-glass {
+.btn-glass {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: white;
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
+
+    /* Responsive text & padding */
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.5rem, 1.2vw, 0.8rem);
+
+    transition: background 0.3s ease, color 0.3s ease, font-size 0.3s ease, padding 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: #222;
+}
+
 
   .btn-glass:hover {
     background: rgba(255, 255, 255, 0.35);
     color: #222;
   }
 
-  .card-glass {
+.card-wid {
+    width: clamp(145px, 40vw, 274px);
+}
+
+.card-glass {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
@@ -97,7 +115,26 @@
   border-radius: 1rem;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   color: white;
+  padding: clamp(0px, 0.4vw, 0.8rem);
+  transition: all 0.3s ease;
 }
+
+.card-glass h6 {
+  font-size: clamp(0.6rem, 1vw, 0.9rem);
+}
+
+.card-glass h3 {
+  font-size: clamp(0.8rem, 1.8vw, 1.4rem);
+  font-weight: bold;
+}
+
+
+.gap-responsive {
+  gap: clamp(0.5rem, 0.5vw, 0.5rem);
+  row-gap: clamp(0.5rem, 0.5vw, 0.8rem);
+  column-gap: clamp(0.5rem, 0.5vw, 0.5rem);
+}
+
 
 .bs-table-color {
     color: #1A973D
@@ -106,7 +143,8 @@
 .table-glass {
     background: rgba(255, 255, 255, 0); /* transparansi */
     color: white;
-    bs-table-color: #1A973D
+    bs-table-color: #1A973D;
+
 }
 
 
@@ -117,16 +155,37 @@
     color : #ffffffcc
 }
 
-.table-glass thead th {
-    color:  #23D155;
-    background-color: rgba(255, 255, 255, 0.1);
+.table-glass thead tr th {
+    color:  #ffffff;
+    background-color: #23D155;
     font-weight: 600;
+    font-size: clamp(11px, 2vw, 16px);
+    line-height: 1.2;
+}
 
+
+.table-glass tbody td {
+    font-size: clamp(9px, 1.5vw, 16px);
 }
 
 .table-glass tbody tr:hover {
     background-color: rgba(255, 255, 255, 0);
 }
+
+.table-header-sticky th {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+
+    .card-header {
+        padding-top: clamp(0.2rem, 2vw, 0.5rem);
+        padding-right: clamp(1rem, 2vw, 1rem);
+        padding-bottom: clamp(0.2rem, 2vw, 0.5rem);
+        padding-left: clamp(1rem, 2vw, 1rem);
+
+    }
 
 
 /* Tooltip utama */
@@ -171,59 +230,100 @@
     }
 
 
-    .btn-hijau {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #23D155;               /* Warna utama */
-  --bs-btn-border-color: #1A973D;
-
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #105C26;         /* Hover lebih gelap */
-  --bs-btn-hover-border-color: #0B3F1A;
-
-  --bs-btn-focus-shadow-rgb: 26,151,61; /* RGB dari #1A973D */
-
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0B3F1A;        /* Warna paling gelap saat ditekan */
-  --bs-btn-active-border-color: #0B3F1A;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
-
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #1A973D;      /* Hijau terang saat disable */
-  --bs-btn-disabled-border-color: #1A973D;
-
-  color: var(--bs-btn-color);
-  background-color: var(--bs-btn-bg);
-  border-color: var(--bs-btn-border-color);
+.btn-hijau {
+  font-size: clamp(0.6rem, 1.6vw, 1rem);
+  /* padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(1rem, 2vw, 1.5rem); */
+  color: #fff;
+  background-color: #23D155;
+  border: 1px solid #1A973D;
+  border-radius: clamp(5px, 1.2vw, 6px);
+  transition: all 0.3s ease;
 }
 
 .btn-hijau:hover {
-  color: var(--bs-btn-hover-color);
-  background-color: var(--bs-btn-hover-bg);
-  border-color: var(--bs-btn-hover-border-color);
+  background-color: #105C26;
+  border-color: #0B3F1A;
+  color: #fff;
 }
 
-.btn-hijau:focus,
-.btn-hijau.focus {
-  box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+.btn-hijau:focus {
+  box-shadow: 0 0 0 0.25rem rgba(26,151,61,0.5);
+  outline: none;
 }
 
-.btn-hijau:active,
-.btn-hijau.active,
-.show > .btn-hijau.dropdown-toggle {
-  color: var(--bs-btn-active-color);
-  background-color: var(--bs-btn-active-bg);
-  border-color: var(--bs-btn-active-border-color);
-  box-shadow: var(--bs-btn-active-shadow);
+.btn-hijau:active {
+  background-color: #0B3F1A;
+  border-color: #0B3F1A;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
 }
 
-.btn-hijau:disabled,
-.btn-hijau.disabled {
-  color: var(--bs-btn-disabled-color);
-  background-color: var(--bs-btn-disabled-bg);
-  border-color: var(--bs-btn-disabled-border-color);
+.btn-hijau:disabled {
+  background-color: #1A973D;
+  border-color: #1A973D;
+  color: #fff;
+  opacity: 0.7;
 }
 
-    </style>
+
+    .desc-welcome {
+        color: #ffffffbf;
+        font-size: clamp(0.6rem, 1vw + 0.5rem, 1rem);
+        line-height: 1.3;
+    }
+    .h2, h2 {
+        font-size: clamp(1rem, 1.5vw + 0.8rem, 1.8rem);
+    }
+
+    .select2-hijau {
+        font-size: clamp(0.6rem, 1.5vw, 1rem);
+        font-weight: 500;
+        /* padding: clamp(0.3rem, 1vw, 0.6rem) clamp(0.5rem, 2vw, 1rem); */
+        /* padding: clamp(0.35rem, 1vw, 0.rem) clamp(0.8rem, 1vw, 1.2rem); */
+        transition: font-size 0.3s ease, padding 0.3s ease;
+        background-position: right clamp(4px, 1vw, 10px) center;
+        clamp(14px, 1vw, 12px) clamp(9px, 1vw, 12px);
+        background-repeat: no-repeat;
+        padding-right: clamp(1.5rem, 3vw, 2.5rem);
+        transition: background-size 0.3s ease, background-position 0.3s ease;
+    }
+
+
+    .select2-hijau option {
+        font-size: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .label-responsive {
+        font-size: clamp(0.55rem, 1.4vw, 1rem);
+        transition: font-size 0.3s ease;
+    }
+    .card-bto button {
+        font-size: clamp(0.6rem, 1.6vw, 1rem);
+        /* padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.7rem, 3vw, 1.2rem); */
+        border-radius: clamp(5px, 1.2vw, 6px);
+        transition: all 0.3s ease;
+    }
+    .px-responsive {
+        padding-left: clamp(0rem, 1.5vw, 3rem);
+        padding-right: clamp(0rem, 1.5vw, 3rem);
+    }
+    .py-responsive {
+        padding-top: clamp(0rem, 0.6vw, 3rem);
+        padding-bottom: clamp(0rem, 0.6vw, 3rem);
+    }
+
+
+
+@media (max-width: 576px) {
+    .content {
+        padding: 1rem !important;
+    }
+    .copyright {
+        text-align: center;
+        font-size: 0.57rem;
+    }
+}
+
+</style>
 
 </head>
 <body>
@@ -231,39 +331,42 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand text-white" href="#">Kencleng Masjid</a>
+      <a class="navbar-brand text-white" href="#">e-Kencleng</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="btn btn-glass" href="{{ route('login') }}">Login</a>
-          </li>
-          {{-- <a class="sidebar-link" href={{route('logout-user')}}>
+
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="btn btn-glass mt-2 mt-lg-0 ms-lg-2" href="{{ route('login') }}">Login</a>
+            </li>
+            {{-- <a class="sidebar-link" href={{route('logout-user')}}>
                         <i class="align-middle" data-feather="log-out"></i>
                         <span class="align-middle">Keluar</span>
                 </a>
                 <form id="logout-form" action="" method="POST" class="d-none">
                         @csrf
                 </form> --}}
-
+            </ul>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Konten utama -->
-  <main class="content">
-    <div class="container-fluid px-5 py-3">
-      @include('flash::message')
-      @yield('content')
+    <main class="content">
+    <div class="container px-responsive py-3">
+        @include('flash::message')
+        @yield('content')
     </div>
-  </main>
+    </main>
+
 
   <!-- Footer -->
   <footer class="footer py-3">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
       <nav>
         <ul class="list-unstyled mb-0">
           {{-- <li><a href="#" class="text-white text-decoration-none">About Us</a></li> --}}
@@ -277,7 +380,6 @@
 
 
   @yield('js')
-
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

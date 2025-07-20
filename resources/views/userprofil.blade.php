@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Data <strong>Pengguna</strong></h1>
+    <h2>Data <strong>User</strong></h2>
     <div class="d-flex justify-content-end mb-4">
         <a href="{{ route('userprofil.create') }}" class="btn btn-hijau">+ Tambah User</a>
     </div>
@@ -11,8 +11,8 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+    <div class="card-aksi table-responsive">
+        <table class="table table-hijau table-bordered table-hover">
             <thead class="table-success">
                 <tr>
                     <th>No</th>
@@ -32,7 +32,7 @@
                     <td>{{ $user->role }}</td>
                     <td>{{ $user->created_at->format('d-m-Y') }}</td>
                     <td>
-                        <a href="{{ route('userprofil.edit',$user->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('userprofil.edit',$user->id) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
                         <form action="{{ route('userprofil.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')

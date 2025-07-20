@@ -1,10 +1,10 @@
 @extends('layouts.app_adminkit')
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-12">
-            <div class="card shadow-sm border-0">
+        <div class="card-bto">
+            <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h2 class="mb-0">Edit <strong>Data Pengambilan</strong></h2>
                 </div>
@@ -30,9 +30,9 @@
 
                         <div class="row">
                             {{-- Bulan --}}
-                            <div class="col-md-3 mb-3">
-                                <label for="bulan" class="form-label">Bulan</label>
-                                <select id="bulan" name="bulan" class="form-select" required>
+                            <div class="card-bto mb-3">
+                                <label for="bulan" class="form-label" style="font-size: clamp(0.6rem, 1vw, 1rem); font-weight: 600;">Bulan</label>
+                                <select id="bulan" name="bulan" class="form-select select2-hijau" required>
                                     <option value="">-- Pilih Bulan --</option>
                                     @foreach(['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'] as $bln)
                                         <option value="{{ $bln }}">{{ $bln }}</option>
@@ -41,10 +41,10 @@
                             </div>
 
                             {{-- Tahun --}}
-                            <div class="col-md-3 mb-3">
-                                <label for="tahun" class="form-label">Tahun</label>
+                            <div class="card-bto mb-3">
+                                <label for="tahun" class="form-label" style="font-size: clamp(0.6rem, 1vw, 1rem); font-weight: 600;">Tahun</label>
                                 {{-- <input type="number" id="tahun" name="tahun" class="form-control" placeholder="Contoh: 2025" required> --}}
-                                <select name="tahun" id="tahun" class="form-select" required>
+                                <select name="tahun" id="tahun" class="form-select select2-hijau" required>
                                     <option value="">-- Pilih Tahun --</option>
                                     @for ($tahun = now()->year; $tahun >= 2023; $tahun--)
                                         <option value="{{ $tahun }}">{{ $tahun }}</option>
@@ -58,8 +58,8 @@
 
                             {{-- Jumlah dana --}}
                             <div class="col-md-6 mb-3">
-                                <label for="jml_dana" class="form-label">Jumlah Dana</label>
-                                <input type="text" name="jml_dana" id="jml_dana" class="form-control rupiah" value="{{ old('jml_dana', $pengambilan->jml_dana) }}" required>
+                                <label for="jml_dana" class="form-label" style="font-size: clamp(0.6rem, 1vw, 1rem); font-weight: 600;">Jumlah Dana</label>
+                                <input type="text" name="jml_dana" id="jml_dana" class="form-control rupiah select2-hijau" value="{{ old('jml_dana', $pengambilan->jml_dana) }}" required>
                             </div>
 
 
@@ -74,8 +74,8 @@
 
                         {{-- Filter kelompok --}}
                             <div class="col-md-4 mb-3">
-                                <label for="filterKelompok" class="form-label">Filter Kelompok Jamaah</label>
-                                <select id="filterKelompok" class="form-select">
+                                <label for="filterKelompok" class="form-label" style="font-size: clamp(0.6rem, 1vw, 1rem); font-weight: 600;">Filter Kelompok Jamaah</label>
+                                <select id="filterKelompok" class="form-select select2-hijau">
                                     <option value="">Semua Kelompok</option>
                                     @foreach($kelompoks->sortKeys() as $kelompok => $jamaahs)
                                         <option value="{{ $kelompok }}">{{ $kelompok }}</option>
@@ -118,8 +118,6 @@
                         <div class="mt-4">
                             <button type="submit" class="btn btn-hijau">Update Data</button>
                             <a href="{{ route('pengambilan.index') }}" class="btn btn-secondary ms-2">Batal</a>
-
-
                         </div>
                     </form>
                 </div>
