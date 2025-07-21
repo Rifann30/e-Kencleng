@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Jul 2025 pada 06.35
+-- Waktu pembuatan: 21 Jul 2025 pada 05.28
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -432,7 +432,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$/tJXEdM6RRUmOaYRVEk.GOJyGp9qusPpyg8rCixVBcxLS2D1r7T8K', '1L2OPZV7nG2E9iV6amooEndxP3TbbjbH9DnqZdUX8Fpsd4iwxHjXeOuwCORu', '2025-06-24 05:45:56', '2025-07-20 04:35:03'),
+(1, 'admin', 'admin@gmail.com', 'admin', NULL, '$2y$12$/tJXEdM6RRUmOaYRVEk.GOJyGp9qusPpyg8rCixVBcxLS2D1r7T8K', 'S1kJjf3kcFjjpFJyV2jKXFYZvXlMCZ4RywEUHVMkNkcK0T3NM2hfUPaaMldP', '2025-06-24 05:45:56', '2025-07-20 04:35:03'),
 (5, 'remas', 'remas@gmail.com', 'remas', NULL, '$2y$12$PK2Flh7DH29bmglCa2nBhe5hBPCQ0uFp2Z.EUe3F64fgRtcn.HAqO', 'ewRL9bY65Efub3KV14G1agcOl9zScWec9WRrJ5LqzyXnUbICe9jNvjCyTtrc', '2025-06-30 02:15:09', '2025-07-08 10:18:40'),
 (6, 'takmir', 'takmir@gmail.com', 'takmir', NULL, '$2y$12$.3yltj.BPF4uAhCWSXqKOuYV90frJrR8/xqMv15kPhXJJeHIS0iK2', NULL, '2025-06-30 02:34:46', '2025-06-30 02:34:46');
 
